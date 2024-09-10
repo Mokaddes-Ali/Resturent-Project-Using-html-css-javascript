@@ -93,3 +93,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
+const cardsContainer = document.querySelector('.menu-cards');
+const nextBtn = document.querySelector('.next-btn');
+const prevBtn = document.querySelector('.prev-btn');
+
+let currentScrollPosition = 0;
+
+nextBtn.addEventListener('click', () => {
+    currentScrollPosition += 250; // Adjust this value based on card width
+    cardsContainer.scrollTo({
+        left: currentScrollPosition,
+        behavior: 'smooth'
+    });
+});
+
+prevBtn.addEventListener('click', () => {
+    currentScrollPosition -= 250;
+    if (currentScrollPosition < 0) currentScrollPosition = 0;
+    cardsContainer.scrollTo({
+        left: currentScrollPosition,
+        behavior: 'smooth'
+    });
+});

@@ -7,8 +7,11 @@
 
 body {
     font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
 }
 
+/* Navbar Styles */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -16,15 +19,24 @@ body {
     padding: 20px;
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.logo h2 {
+    color: #ff4500;
+    font-size: 1.8rem;
+    font-weight: 700;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
+    position: relative;
 }
 
 .nav-links li {
     margin: 0 15px;
+    position: relative;
 }
 
 .nav-links a {
@@ -34,6 +46,38 @@ body {
     font-size: 1rem;
 }
 
+.nav-links a i {
+    margin-right: 5px;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    list-style-type: none;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links li:hover .dropdown {
+    display: block;
+}
+
+.dropdown li {
+    margin: 5px 0;
+}
+
+.dropdown li a {
+    color: #ff4500;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    display: block;
+}
+
+/* Toggle Button */
 .toggle-button {
     display: none;
     font-size: 24px;
@@ -155,6 +199,61 @@ body {
     transform: translateY(-10px);
 }
 
+
+/* Search Bar */
+.search-bar {
+    display: none;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+#search-bar.active {
+    display: flex;
+}
+
+.search-bar input {
+    padding: 8px;
+    font-size: 16px;
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.search-bar button {
+    padding: 8px 15px;
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+    border-radius: 4px;
+}
+
+/* Cart Modal */
+.cart-modal {
+    display: none;
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    background: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 100;
+    width: 300px;
+}
+
+.cart-modal h2 {
+    margin-bottom: 20px;
+}
+
+.cart-modal.active {
+    display: block;
+}
+
+#cart-items {
+    margin-bottom: 20px;
+}
+
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
     .hero {
@@ -167,19 +266,7 @@ body {
     }
 
     .hero-content h1 {
-        font-size: 2rem;
-    }
-
-    .hero-buttons a {
-        margin-bottom: 15px;
-    }
-
-    .menu-cards {
-        flex-direction: column;
-    }
-
-    .card {
-        margin-bottom: 20px;
+        font-size: 2.5rem;
     }
 
     .toggle-button {
@@ -203,5 +290,106 @@ body {
 
     .nav-links.active {
         display: flex;
+    }
+
+    .menu-cards {
+        bottom: -30px;
+    }
+}
+
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+/* Section Title */
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.subtitle {
+    color: #f56a79;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Cards Container */
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Card Styles */
+.card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+    background-color: #e6f9f0;
+    transform: scale(1.05);
+}
+
+/* Card Image with Circular Background */
+.card-img {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    background-color: #d8f5e3; /* Light green background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-img img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+/* Card Title */
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Card Text */
+.card-text {
+    color: #888;
+}
+
+/* Responsive Styling for Mobile */
+@media (max-width: 767px) {
+    .title {
+        font-size: 1.8rem;
     }
 }

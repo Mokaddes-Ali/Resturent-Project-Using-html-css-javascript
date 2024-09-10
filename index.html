@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Navbar -->
+
     <nav class="navbar">
         <div class="logo">
             <h2>FOODI</h2>
@@ -28,8 +28,97 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+
     <section class="hero">
+        <div class="hero-content">
+            <h1>Dive into Delights <br>Of Delectable <span>Food</span></h1>
+            <p>Where Each Plate Weaves a Story of Culinary Mastery and Passionate Craftsmanship</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-order">Order Now</a>
+                <a href="#" class="btn btn-watch">Watch Video</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="image-circle">
+                <img src="path-to-your-image" alt="Hot Spicy Food">
+           
+                <div class="top-left-card">Hot spicy Food 🌶️</div>
+              
+                <div class="menu-cards">
+                    <div class="card">
+                        <img src="spicy-noodles.jpg" alt="Spicy Noodles">
+                        <h3>Spicy Noodles</h3>
+                        <div class="rating">⭐⭐⭐⭐⭐</div>
+                        <p>$18.00</p>
+                    </div>
+                    <div class="card">
+                        <img src="vegetarian-salad.jpg" alt="Vegetarian Salad">
+                        <h3>Vegetarian Salad</h3>
+                        <div class="rating">⭐⭐⭐⭐⭐</div>
+                        <p>$23.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html> 
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Foodi | Restaurant Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <h2>FOODI</h2>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#">Home</a></li>
+            <li>
+                <a href="#">Menu</a>
+                <ul class="dropdown">
+                    <li><a href="#">Pizza</a></li>
+                    <li><a href="#">Burgers</a></li>
+                    <li><a href="#">Noodles</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Services</a>
+                <ul class="dropdown">
+                    <li><a href="#">Delivery</a></li>
+                    <li><a href="#">Catering</a></li>
+                    <li><a href="#">Reservations</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="fas fa-search" id="search-icon"></i></a></li>
+            <li><a href="#"><i class="fas fa-phone-alt"></i> Contact</a></li>
+            <li><a href="#"><i class="fas fa-shopping-cart" id="cart-icon"></i> Cart (<span id="cart-count">0</span>)</a></li>
+        </ul>
+        <div class="toggle-button" id="toggle-button">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Search Bar -->
+    <div class="search-bar" id="search-bar">
+        <input type="text" id="search-input" placeholder="Search for food...">
+        <button id="search-btn">Search</button>
+    </div>
+
+     <!-- Hero Section -->
+     <section class="hero">
         <div class="hero-content">
             <h1>Dive into Delights <br>Of Delectable <span>Food</span></h1>
             <p>Where Each Plate Weaves a Story of Culinary Mastery and Passionate Craftsmanship</p>
@@ -61,6 +150,65 @@
             </div>
         </div>
     </section>
+
+
+    <!-- Shopping Cart Modal -->
+    <div id="cart-modal" class="cart-modal">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <button id="close-cart">Close</button>
+    </div>
+
+
+
+    <!-- Section Container -->
+    <section class="container">
+        <!-- Title -->
+        <div class="section-title">
+            <h4 class="subtitle">Customer Favorites</h4>
+            <h2 class="title">Popular Categories</h2>
+        </div>
+
+        <!-- Cards Section -->
+        <div class="cards">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="burger.png" alt="Main Dish">
+                </div>
+                <h3 class="card-title">Main Dish</h3>
+                <p class="card-text">(86 dishes)</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="breakfast.png" alt="Breakfast">
+                </div>
+                <h3 class="card-title">Breakfast</h3>
+                <p class="card-text">(12 items)</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="dessert.png" alt="Dessert">
+                </div>
+                <h3 class="card-title">Dessert</h3>
+                <p class="card-text">(48 desserts)</p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="juice.png" alt="Browse All">
+                </div>
+                <h3 class="card-title">Browse All</h3>
+                <p class="card-text">(255 items)</p>
+            </div>
+        </div>
+    </section>
+
 
     <script src="script.js"></script>
 </body>
